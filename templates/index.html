@@ -1,0 +1,69 @@
+<div class="big-container">
+
+  <nav class="navbar navbar-default">
+      <p class="navbar-text navbar-center">Speedy Cart</p>
+      <p class="navbar-btn navbar-right"><a class="btn btn-info btn-md" href="/#/" role="button">Refresh for updated list</a></p>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" name="name" class="form-control" ng-model="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+  </nav>
+<div class="main-container">
+  <div class="main-row">
+    <h2>Listings</h2>
+    <div class="col-sm-3 col-md-3 col-lg-2">
+
+    </div>
+    <div class="col-sm-6 col-md-6 col-lg-8">
+          <div ng-repeat="listing in listings | filter:search" class="box">
+            <p class="title">
+              <span>title</span><br> {{ listing.title }}
+            </p>
+              <img src="{{listing.MainImage.url_75x75}}"alt=""/>
+              <p class="price">
+                price: ${{ listing.price }}
+              </p>
+              <p class="quantity">
+                quantity: {{ listing.quantity }}
+              </p>
+
+              <div class="button-container">
+                  <div class="row">
+                      <div class="col-sm-4">
+                          <a class="btn btn-warning btn-md" href="/#/details/{{listing.listing_id}}" role="button">View Item</a>
+                      </div>
+                      <div class="col-sm-4">
+                          <a class="btn btn-success btn-md" ng-click="addToCart(listing)" role="button">Add To Cart</a></li>
+                      </div>
+                      <div class="col-sm-4">
+                          <a class="btn btn-primary btn-md" href="/#/shoppingCart" role="button">See Cart</a></li>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- <ul>
+                <li><a class="btn btn-success btn-md" href="/#/details/{{listing.listing_id}}" role="button">View Item</a></li>
+                <li><a class="btn btn-success btn-md" ng-click="addToCart(listing)" role="button">Add To Cart</a></li>
+                <li><a class="btn btn-success btn-md" href="/#/shoppingCart" role="button">See Cart</a></li>
+              </ul> -->
+          </div>
+    </div>
+    <div class="col-sm-3 col-md-3 col-lg-2">
+
+    </div>
+
+  </div>
+</div>
+  <div class="row footer">
+    <div class="col-xs-12">
+      <footer>
+        <p>&copy; Copyright 2016 Finger</p>
+      </footer>
+    </div>
+  </div>
+</div>
+
+
+<!-- href="/#/shoppingCart" -->

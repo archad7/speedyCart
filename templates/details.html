@@ -1,0 +1,23 @@
+<nav class="navbar navbar-default">
+    <p class="navbar-text navbar-center">Speedy Cart</p>
+    <p class="navbar-btn navbar-right"><a class="btn btn-info btn-md" href="/#/" role="button">Home Page</a></p>
+</nav>
+<div class="row">
+  <div class="col-lg-8">
+    <img class="detail-img" src="{{product.MainImage.url_170x135}}"/>
+    <p>Price: ${{product.price}}</p>
+    <p><span>Description:</span> {{product.description}}</p>
+  </div>
+  <div class="col-lg-4 detail-button">
+    <!-- <p><a class="btn btn-success btn-md" href="/#/" role="button">Home Page</a></p> -->
+    <p><a class="btn btn-success btn-md" ng-click="addToCart(listing)" role="button">Add To Cart</a></p>
+    <p><a class="btn btn-primary btn-md" href="/#/shoppingCart" role="button">See Cart</a></p>
+  </div>
+</div>
+<div class="row footer">
+  <div class="col-xs-12">
+    <footer>
+      <p>&copy; Copyright 2016 Finger</p>
+    </footer>
+  </div>
+</div>
